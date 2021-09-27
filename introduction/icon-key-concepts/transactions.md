@@ -72,5 +72,3 @@ If you get the transaction hash as a response to sending a transaction to the IC
 
 You can check if a transaction is confirmed or pending using "icx\_getTransactionResult" JSON-RPC API. "Pending" means that a transaction is in the transaction pool or block generation stage \(except in the case of consensus failure on the block, it can be temporarily marked as "pending"\). For specific information about this process, see the JSON-RPC APIs "icx\_getTransactionResult" section of the [ICON JSON-RPC API v3 Specification](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md#icx_gettransactionresult) documentation.
 
-[ICON JSON-RPC API v3 Specification](../../references/reference-manuals/icon-json-rpc-api-v3-specification.md)
-

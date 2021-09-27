@@ -95,8 +95,6 @@ There are certain applications that are awkward to charge end-users the fees for
 
 ### Virtual Step
 
-#### \* In ICON 2, virtual step bonus has been removed. SCORE can still enable fee sharing but only the deposited ICX will be used. There is no extra virtual step generated anymore.
-
 * Virtual Step is the new fee system of the ICON network for the SCORE owner.  
 * Virtual Step is generated every month in proportion to the quantity of ICX deposited and the duration of the deposit period determined. The SCORE owner can pay fees with the generated Virtual Step. 
 * This system can offset the fee burden of SCORE owners and motivate owners to pay 100% transaction fee and attracts more customers to use their SCORE.

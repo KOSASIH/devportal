@@ -13,7 +13,7 @@ description: 'Yellow paper: https://icon.foundation/download/IISS_Paper_v2.0_EN.
 
 ## Delegated Proof of Contribution
 
-* Delegated Proof of Contribution \(DPoC\) is the incentive protocol to determine the contributions in the ecosystem. IISS works based on DPoC mechanism. 7 types of contribution items can be demonstrated by IISS.
+* Delegated Proof of Contribution \(DPoC\) is the incentive protocol to determine the contributions in the ecosystem. IISS works based on DPoC mechanism. 3 types of contribution items can be demonstrated by IISS.
 * Representative
   * A Public Representative \(P-Rep\) is a full node on the ICON Network that participates in consensus and governance.
   * P-Reps consist of the top 22 Main P-Reps and 78 Sub P-Reps, and are elected by ICONists.
@@ -22,8 +22,24 @@ description: 'Yellow paper: https://icon.foundation/download/IISS_Paper_v2.0_EN.
   * Representative Reward
     * Representative Rewards are given to all 100 P-Reps according to the delegated amount of ICX received.
 * ICONist
-  * All ICONists can receive the reward in return for delegating their ICX to P-Reps
+  * All ICONists can receive the reward in return for delegate ICX to P-Reps.
+  * All ICONists can contribute to the network through the delegation of ICX.
+  * Therefore, ICONist can receive rewards according to the delegated amount of ICX.
 * Contribution Items
 
-## [Governance Variables](governance-public-representative-p-rep.md#inflation-controls-and-reward-distribution)
+| Item | Description |
+| :--- | :--- |
+| Block Validation Reward \(β1\) | Reward for block production and verification when a representative produces and verifies a block |
+| Representative Reward \(β2\) | Reward for delegation when a Representative is delegated by ICONists |
+| Representative Delegation Reward \(β3\) | Reward for delegation of a representative when ICONists delegate a representative |
+
+## Governance Variables
+
+* The following table introduces the governance variables mentioned above. The governance variables consist of a total of seven items: reward variables for the entity delegated ICX, reward rates for the ICONist delegated ICX, and variables for setting the amount of Step, the fee for the network.
+* Governance Variable determines the amount of reward for each contribution item.
+
+| Variables | Name | Explanation |
+| :--- | :--- | :--- |
+| i\_rep | Expected Monthly Reward per Representative | Expected reward amount for representative is determined by the weighted average of each representative suggestion. Each P-Reps suggest this amount based on their expenditure and profit. |
+| s | Step Price | Minimum transaction fee in the ICON network which is determined by representatives. |
 
