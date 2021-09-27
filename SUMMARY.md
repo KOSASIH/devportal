@@ -103,20 +103,6 @@
 * [Support](support.md)
 * [Developer Forum](https://forum.icon.community/c/d/33)
 
-## BTP <a id="btp-gitbook"></a>
-
-* [Read the doc on Github](https://github.com/icon-project/devportal/blob/master/btp-gitbook/BTP-Document.md)
-* [Overview](btp-gitbook/overview.md)
-* [BTP Development Resources](btp-gitbook/btp-development-resources.md)
-* [BTP Development Instructions](btp-gitbook/btp-development-instructions.md)
-* [Deploy Smart Contracts \(ICON\)](btp-gitbook/deploy-smart-contracts-icon.md)
-* [Deploy Smart Contracts \(Moonriver\)](btp-gitbook/deploy-smart-contracts-moonriver.md)
-* [Relays Setup](btp-gitbook/relays-setup.md)
-* [Smart Contracts Configuration](btp-gitbook/smart-contracts-configuration.md)
-* [Deploy Relays](btp-gitbook/deploy-relays.md)
-* [Transfer Example](btp-gitbook/transfer-example.md)
-* [Appendix](btp-gitbook/appendix.md)
-
 ## Release notes
 
 * [2021-03-20](release-notes/2021-03-20.md)
