@@ -114,8 +114,6 @@ The "details" parameter is an external json file that holds additional informati
 
 ## **3. Build MainNet P-Rep Node**
 
-{% page-ref page="../icon-2.0/goloop/get-started/build.md" %}
-
 ### **Pre-requisites**
 
 The specifications below are recommended for main P-Reps \(top 22\). Sub P-Reps \(outside of top 22\) can run lower-end specs as they do not produce/validate blocks but only serve as citizen nodes. Current blockchain size is 1.1T as of this update \(2021, September 13th\).

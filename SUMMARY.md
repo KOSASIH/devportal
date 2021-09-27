@@ -98,27 +98,6 @@
   * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
   * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
 
-## ICON 2.0
-
-* [Goloop](icon-2.0/goloop/README.md)
-  * [Get Started](icon-2.0/goloop/get-started/README.md)
-    * [How to build](icon-2.0/goloop/get-started/build.md)
-    * [Local Network](icon-2.0/goloop/get-started/local-network.md)
-  * [Genesis](icon-2.0/goloop/genesis/README.md)
-    * [Transaction](icon-2.0/goloop/genesis/genesis_tx.md)
-    * [Storage](icon-2.0/goloop/genesis/genesis_storage.md)
-  * [JSON-RPC](icon-2.0/goloop/json-rpc/README.md)
-    * [Goloop JSON-RPC API v3](icon-2.0/goloop/json-rpc/jsonrpc_v3.md)
-    * [BTP Extension](icon-2.0/goloop/json-rpc/btp_extension.md)
-    * [IISS Extension](icon-2.0/goloop/json-rpc/iiss_extension.md)
-  * [Node Management](icon-2.0/goloop/management/README.md)
-    * [API](icon-2.0/goloop/management/goloop_admin_api.md)
-    * [CLI](icon-2.0/goloop/management/goloop_cli.md)
-    * [Metrics](icon-2.0/goloop/management/metric.md)
-* [Java SCORE](icon-2.0/java-score/README.md)
-  * [Examples](https://github.com/icon-project/java-score-examples)
-  * [Tutorial](icon-2.0/java-score/tutorial.md)
-
 ---
 
 * [Support](support.md)
