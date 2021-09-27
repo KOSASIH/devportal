@@ -4,11 +4,9 @@
 
 P-Reps are the consensus nodes that produce, verify blocks and participate in network policy decisions on the ICON Network. To register and become a P-Rep will consist of the following three steps,
 
-### 1. Install P-Rep tools \(CLI for on-chain P-Rep operations\)
-
-### 2. Register as a P-Rep via P-Rep tools
-
-### 3. Build MainNet P-Rep node
+1. Install P-Rep tools \(CLI for on-chain P-Rep operations\)  
+2. Register as a P-Rep via P-Rep tools  
+3. Build MainNet P-Rep node
 
 ## **1. Install P-Rep Tools**
 
@@ -185,68 +183,43 @@ $ docker-compose version
 
 ### **3.3 Running a P-Rep Node Container using docker-compose**
 
-#### Pull ICON2 image <a id="docs-internal-guid-521fbdaf-7fff-9b14-9d7d-7f7424107303"></a>
+Create a file named `docker-compose.yml` in a text editor and add the following content:
 
-```text
-# docker pull <goloop package image>
-```
-
-#### Keystore
-
-If you have your own KEYSTORE, store it and the password file in the configuration directory.
-
-```text
-# cp keystore.json ./config/keystore.json
-# echo -n "password" > ./config/keysecret
-```
-
-If you have your own KEYSTORE, store it and the password file in the configuration directory.
-
-#### Create docker-compose config
-
-```text
-version: "3.7"
+```yaml
+version: "3"
 services:
-    node:
-        image: iconloop/goloop-icon:latest
-        env_file:
-            - ./node.env
-        volumes:
-            - ./data:/goloop/data
-            - ./mainnet:/mainnet
-            - ./config:/goloop/config
-        ports:
-            - "9080:9080"
-            - "8080:8080"
+  prep-node:
+     image: "iconloop/prep-node"
+     container_name: "prep-mainnet"
+     network_mode: host     
+     restart: "always"
+     environment:
+        NETWORK_ENV: "mainnet"
+        LOG_OUTPUT_TYPE: "file"
+        SWITCH_BH_VERSION3: "10324749"
+        CERT_PATH: "/cert"
+        LOOPCHAIN_LOG_LEVEL: "DEBUG"
+        ICON_LOG_LEVEL: "DEBUG"        
+        FASTEST_START: "yes" # Restore from lastest snapshot DB
+        PRIVATE_KEY_FILENAME: "YOUR_KEYSTORE or YOUR_CERTKEY FILENAME" # only file name
+        PRIVATE_PASSWORD: "YOUR_KEY_PASSWORD"
+     cap_add:
+        - SYS_TIME      
+     volumes:
+        - ./data:/data # mount a data volumes
+        - ./cert:/cert # Automatically generate cert key files here
+     ports:
+        - 9000:9000
+        - 7100:7100
 ```
 
-Start containers
+**Run docker-compose**
 
 ```text
-# docker-compose up -d
+$ docker-compose up -d
 ```
 
-Check the status
-
-```text
-# docker-compose exec node goloop system info
-{
-  "buildVersion": "v0.9.9-338-g19c58f03-dirty",
-  "buildTags": "darwin/amd64 tags()-2021-09-03-14:35:59",
-  "setting": {
-    "address": "hx14637aec2d2941f56d4878557b298bea5460fdaa",
-    "p2p": "node0:8080",
-    "p2pListen": "0.0.0.0:8080",
-    "rpcAddr": ":9080",
-    "rpcDump": false
-  },
-  "config": {
-    "eeInstances": 1,
-    "rpcDefaultChannel": "",
-    "rpcIncludeDebug": false
-  }
-}
-```
+The parameter provided **FASTEST\_START: "yes"** will download the latest full-hour blockchain snapshot, and the remaining blocks will be synchronized automatically. You can check server status and current block height via this API: [http://{YOUR\_NODE\_IP}:9000/api/v1/status/peer](http://{YOUR_NODE_IP}:9000/api/v1/status/peer).
 
 ### **Citizen Node**
 

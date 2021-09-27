@@ -1,7 +1,5 @@
 # Testnet
 
-## ICON 1.0
-
 ### Testnet for SCORE testing
 
 |  |  |
@@ -45,43 +43,11 @@ Pagoda network is for testing P-Rep node
 | Transaction fee | on |
 | SCORE audit | on |
 
-## ICON 2.0
-
-### Testnet
-
-|  |  |
-| :--- | :--- |
-| Name | Sejong |
-| Node | [https://sejong.net.solidwallet.io](https://sejong.net.solidwallet.io) |
-| API endpoint | [https://sejong.net.solidwallet.io/api/v3](https://sejong.net.solidwallet.io/api/v3) |
-| Debug API endpoint | [https://sejong.net.solidwallet.io/api/v3d](https://sejong.net.solidwallet.io/api/v3d) |
-| Network ID \(nid\) | 0x53 |
-| Tracker | [https://sejong.tracker.solidwallet.io](https://sejong.tracker.solidwallet.io) |
-| Transaction fee | on |
-| SCORE audit | off |
-
-* To receive test ICX, please send email to `hello@icon.foundation` with the following information.
-  * TestNet name
-  * TestNet address
+* To receive test ICX, please ask in ICONDev Telegram Channel \([https://t.me/icondevs](https://t.me/icondevs)\)
 * Also, you can use these faucets to get some test ICX: 
   * [https://faucet.sharpn.tech](https://faucet.sharpn.tech)
   * [https://faucet.ibriz.ai](https://faucet.ibriz.ai)
   * [https://faucet.reliantnode.com/](https://faucet.reliantnode.com/)
-
-### BTP
-
-|  |  |
-| :--- | :--- |
-| Name | BTP |
-| Node | [https://btp.net.solidwallet.io](https://btp.net.solidwallet.io) |
-| API endpoint | [https://btp.net.solidwallet.io/api/v3](https://btp.net.solidwallet.io/api/v3) |
-| Debug API endpoint | [https://btp.net.solidwallet.io/api/v3d](https://btp.net.solidwallet.io/api/v3d) |
-| Network ID \(nid\) | 0x42 |
-| Tracker | [https://btp.tracker.solidwallet.io](https://btp.tracker.solidwallet.io) |
-| Transaction fee | on |
-| SCORE audit | off |
-
-* To receive test ICX on BTP testnet, please ask in ICONDev Telegram Channel \([https://t.me/icondevs](https://t.me/icondevs)\)
 
 ### Want to use the ICONex chrome wallet to send ICX on the testnet?
 
