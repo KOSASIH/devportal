@@ -23,7 +23,7 @@ Because SCORE is written in Python, any IDE that supports python can be used for
 
 ![](../../.gitbook/assets/cf93d28-createproject.png)
 
-Currently \(as of 2019. May\), T-Bears only works on Python 3.6. When you set the base interpreter, make sure you are using Python 3.6.
+Currently (as of 2019. May), T-Bears only works on Python 3.6. When you set the base interpreter, make sure you are using Python 3.6.
 
 * If you are using PyCharm Professional, you can configure T-Bears Docker as a remote interpreter.
 
@@ -35,7 +35,7 @@ Reference: [T-Bears Installation](../../tbears/installation.md)
 
 **Install dependencies**
 
-On macOS \(Homebrew\)
+On macOS (Homebrew)
 
 ```bash
 # install develop tools
@@ -47,7 +47,7 @@ $ brew install rabbitmq
 $ brew services start rabbitmq
 ```
 
-On Linux \(apt-get\)
+On Linux (apt-get)
 
 ```bash
 # Install levelDB
@@ -69,7 +69,7 @@ pip install tbears
 
 After finishing installation, you can check the T-Bears version using `tbears -v` command.
 
-![](../../.gitbook/assets/6dd46ba-tbears_-v%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](<../../.gitbook/assets/6dd46ba-tbears\_-v (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
 
 ### Create a SCORE project
 
@@ -90,4 +90,3 @@ New SCORE project has been successfully created. Select the main class file and 
 ![](../../.gitbook/assets/cbd60b5-endgame.png)
 
 ![Enjoy the IDE features such as autocompletion and code reference information.](../../.gitbook/assets/6bbfef7-thelast.png)
-

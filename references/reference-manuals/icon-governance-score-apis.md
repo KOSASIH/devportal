@@ -15,38 +15,38 @@ This document describes APIs that Governance SCORE provides.
 
 By default, Values in all JSON-RPC messages are in string form. The most commonly used Value types are as follows.
 
-| Value Type | Description | Example |
-| :--- | :--- | :--- |
-| T\_ADDR\_EOA | "hx" + 40 digits HEX string | hxbe258ceb872e08851f1f59694dac2558708ece11 |
-| T\_ADDR\_SCORE | "cx" + 40 digits HEX string | cxb0776ee37f5b45bfaea8cff1d8232fbb6122ec32 |
-| T\_HASH | "0x" + 64 digits HEX string | 0xc71303ef8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238 |
-| T\_INT | "0x" + lowercase HEX string | 0xa |
-| T\_STR | string | hello |
-| T\_IMPORT\_STMT | Import statement string | "{'json': \[\], 'os': \['path'\], 'base.exception': \['ExceptionCode'\]}" |
-| T\_BIN\_DATA | "0x" + lowercase HEX string \(the length of string should be even\) | 0x34b2 |
-| T\_SIG | base64 encoded string | VAia7YZ2Ji6igKWzjR2YsGa2m53nKPrfK7uXYW78QLE+ATehAVZPC40szvAiA6NEU5gCYB4c4qaQzqDh2ugcHgA= |
+| Value Type    | Description                                                       | Example                                                                                  |
+| ------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| T_ADDR_EOA    | "hx" + 40 digits HEX string                                       | hxbe258ceb872e08851f1f59694dac2558708ece11                                               |
+| T_ADDR_SCORE  | "cx" + 40 digits HEX string                                       | cxb0776ee37f5b45bfaea8cff1d8232fbb6122ec32                                               |
+| T_HASH        | "0x" + 64 digits HEX string                                       | 0xc71303ef8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238                       |
+| T_INT         | "0x" + lowercase HEX string                                       | 0xa                                                                                      |
+| T_STR         | string                                                            | hello                                                                                    |
+| T_IMPORT_STMT | Import statement string                                           | "{'json': \[], 'os': \['path'], 'base.exception': \['ExceptionCode']}"                   |
+| T_BIN_DATA    | "0x" + lowercase HEX string (the length of string should be even) | 0x34b2                                                                                   |
+| T_SIG         | base64 encoded string                                             | VAia7YZ2Ji6igKWzjR2YsGa2m53nKPrfK7uXYW78QLE+ATehAVZPC40szvAiA6NEU5gCYB4c4qaQzqDh2ugcHgA= |
 
 ### Import statement
 
 #### Grammar
 
-import\_stmt: "{" import\_element \("," import\_element\) _"}"_   
- _import\_element: \(import\_name \| import\_from\)_   
- _import\_name: dotted\_name ": \[\]"_   
- _Import\_from: dotted\_name ": \[" dotted\_names "\]"_   
- _dotted\_names: dotted\_name \("," dotted\_name\)_    
- dotted\_name: "'"NAME \("." NAME\)\*"'"   
+import_stmt: "{" import_element ("," import_element)_ "}" _\
+_ import_element: (import_name | import_from) _\
+_ import_name: dotted_name ": \[]" _\
+_ Import_from: dotted_name ": \[" dotted_names "]" _\
+_ dotted_names: dotted_name ("," dotted_name) _ \
+ dotted_name: "'"NAME ("." NAME)\*"'" \
  NAME: Not an empty string
 
 #### Examples
 
-| python import | import statement |
-| :--- | :--- |
-| import json | { 'json' : \[\] } |
-| from json import \* | { 'json' : \[\] } |
-| from os import path | { 'os' : \['path'\] } |
-| from base.exception import ExceptionCode | { 'base.exception' : \['ExceptionCode'\] } |
-| import json   from os import path   from base.exception import ExceptionCode   | { 'json' : \[\], 'os' : \['path'\], 'base.exception' : \['ExceptionCode'\] } |
+| python import                                                                                  | import statement                                                          |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| import json                                                                                    | { 'json' : \[] }                                                          |
+| from json import \*                                                                            | { 'json' : \[] }                                                          |
+| from os import path                                                                            | { 'os' : \['path'] }                                                      |
+| from base.exception import ExceptionCode                                                       | { 'base.exception' : \['ExceptionCode'] }                                 |
+| <p>import json <br> from os import path <br> from base.exception import ExceptionCode <br></p> | { 'json' : \[], 'os' : \['path'], 'base.exception' : \['ExceptionCode'] } |
 
 ## Methods List
 
@@ -91,13 +91,13 @@ Query method does not change state. Read-only.
 
 * Queries the current status of the given SCORE.
 * `current` indicates the currently active SCORE instance, while `next` is the SCORE code that has been requested to install or update, but not activated yet.
-* \[Fee 2.0\] Checks the deposit information of the given SCORE.
+* \[Fee 2.0] Checks the deposit information of the given SCORE.
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| address | T\_ADDR\_SCORE | SCORE address whose status be checked |
+| Key     | Value Type   | Description                           |
+| ------- | ------------ | ------------------------------------- |
+| address | T_ADDR_SCORE | SCORE address whose status be checked |
 
 #### Examples
 
@@ -208,7 +208,7 @@ Query method does not change state. Read-only.
 }
 ```
 
-**Response: \(Fee 2.0\) SCORE deposit status**
+**Response: (Fee 2.0) SCORE deposit status**
 
 `depositInfo` field will be shown when there is a deposit in the SCORE.
 
@@ -265,7 +265,7 @@ None
 
 #### Returns
 
-`T_INT` - integer of the current step price in loop \(1 ICX == 10^18 loop\).
+`T_INT` - integer of the current step price in loop (1 ICX == 10^18 loop).
 
 #### Examples
 
@@ -357,9 +357,9 @@ None
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| contextType | string | 'invoke' for sendTransaction, 'query' for call |
+| Key         | Value Type | Description                                    |
+| ----------- | ---------- | ---------------------------------------------- |
+| contextType | string     | 'invoke' for sendTransaction, 'query' for call |
 
 #### Returns
 
@@ -403,9 +403,9 @@ None
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| address | T\_ADDR\_SCORE | SCORE address to query |
+| Key     | Value Type   | Description            |
+| ------- | ------------ | ---------------------- |
+| address | T_ADDR_SCORE | SCORE address to query |
 
 #### Returns
 
@@ -486,9 +486,9 @@ None
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| importStmt | T\_IMPORT\_STMT | Import statement |
+| Key        | Value Type    | Description      |
+| ---------- | ------------- | ---------------- |
+| importStmt | T_IMPORT_STMT | Import statement |
 
 #### Returns
 
@@ -614,9 +614,9 @@ None
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| id | T\_HASH | Transaction hash of the registered network proposal |
+| Key | Value Type | Description                                         |
+| --- | ---------- | --------------------------------------------------- |
+| id  | T_HASH     | Transaction hash of the registered network proposal |
 
 #### Returns
 
@@ -704,10 +704,10 @@ None
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| type | T\_INT | Type for querying \(optional\) |
-| status | T\_INT | Status for querying \(optional\) |
+| Key    | Value Type | Description                    |
+| ------ | ---------- | ------------------------------ |
+| type   | T_INT      | Type for querying (optional)   |
+| status | T_INT      | Status for querying (optional) |
 
 #### Returns
 
@@ -793,9 +793,9 @@ Invoke method can initiate state transition.
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| txHash | T\_HASH | Transaction hash of the SCORE deploy transaction. |
+| Key    | Value Type | Description                                       |
+| ------ | ---------- | ------------------------------------------------- |
+| txHash | T_HASH     | Transaction hash of the SCORE deploy transaction. |
 
 #### Examples
 
@@ -832,10 +832,10 @@ Invoke method can initiate state transition.
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| txHash | T\_HASH | Transaction hash of the SCORE deploy request. |
-| reason | T\_TEXT | Reason for rejecting |
+| Key    | Value Type | Description                                   |
+| ------ | ---------- | --------------------------------------------- |
+| txHash | T_HASH     | Transaction hash of the SCORE deploy request. |
+| reason | T_TEXT     | Reason for rejecting                          |
 
 #### Examples
 
@@ -874,9 +874,9 @@ Invoke method can initiate state transition.
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| address | T\_ADDR\_EOA | New EOA address that will be added to the auditor list |
+| Key     | Value Type | Description                                            |
+| ------- | ---------- | ------------------------------------------------------ |
+| address | T_ADDR_EOA | New EOA address that will be added to the auditor list |
 
 #### Examples
 
@@ -914,9 +914,9 @@ Invoke method can initiate state transition.
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| address | T\_ADDR\_EOA | EOA address in the auditor list |
+| Key     | Value Type | Description                     |
+| ------- | ---------- | ------------------------------- |
+| address | T_ADDR_EOA | EOA address in the auditor list |
 
 #### Examples
 
@@ -953,63 +953,63 @@ Invoke method can initiate state transition.
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| title | T\_STR | Title of the network proposal |
-| description | T\_STR | Description of the network proposal |
-| type | T\_INT | Type of the network proposal |
-| value | T\_DICT | Values for each type of network proposal. Hex string of UTF-8 encoded bytes data of JSON string ex. "0x" + bytes.hex\(json.dumps\(value\_dict\).encode\(\)\) |
+| Key         | Value Type | Description                                                                                                                                                     |
+| ----------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title       | T_STR      | Title of the network proposal                                                                                                                                   |
+| description | T_STR      | Description of the network proposal                                                                                                                             |
+| type        | T_INT      | Type of the network proposal                                                                                                                                    |
+| value       | T_DICT     | <p>Values for each type of network proposal. Hex string of UTF-8 encoded bytes data of JSON string<br>ex. "0x" + bytes.hex(json.dumps(value_dict).encode())</p> |
 
 **available values for the type**
 
-| Value | Description |
-| :--- | :--- |
-| 0x0 | Text |
-| 0x1 | Revision |
-| 0x2 | Malicious SCORE |
-| 0x3 | P-Rep disqualification |
-| 0x4 | Step price |
-| 0x5 | I-Rep |
+| Value | Description            |
+| ----- | ---------------------- |
+| 0x0   | Text                   |
+| 0x1   | Revision               |
+| 0x2   | Malicious SCORE        |
+| 0x3   | P-Rep disqualification |
+| 0x4   | Step price             |
+| 0x5   | I-Rep                  |
 
 **Format of dict values for each type**
 
 _Text_
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| value | T\_STR | Text value |
+| Key   | Value Type | Description |
+| ----- | ---------- | ----------- |
+| value | T_STR      | Text value  |
 
 _Revision_
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| code | T\_INT | Revision code |
-| name | T\_STR | Revision name |
+| Key  | Value Type | Description   |
+| ---- | ---------- | ------------- |
+| code | T_INT      | Revision code |
+| name | T_STR      | Revision name |
 
 _Malicious SCORE_
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| address | T\_ADDR\_SCORE | SCORE address |
-| type | T\_INT | 0x0: Freeze, 0x1: Unfreeze |
+| Key     | Value Type   | Description                |
+| ------- | ------------ | -------------------------- |
+| address | T_ADDR_SCORE | SCORE address              |
+| type    | T_INT        | 0x0: Freeze, 0x1: Unfreeze |
 
 _P-Rep disqualification_
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| address | T\_ADDR\_EOA | EOA address of main/sub P-Rep |
+| Key     | Value Type | Description                   |
+| ------- | ---------- | ----------------------------- |
+| address | T_ADDR_EOA | EOA address of main/sub P-Rep |
 
 _Step price_
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| value | T\_INT | An integer of the step price in loop |
+| Key   | Value Type | Description                          |
+| ----- | ---------- | ------------------------------------ |
+| value | T_INT      | An integer of the step price in loop |
 
 _I-Rep_
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| value | T\_INT | An integer of the I-Rep in loop |
+| Key   | Value Type | Description                     |
+| ----- | ---------- | ------------------------------- |
+| value | T_INT      | An integer of the I-Rep in loop |
 
 #### Examples
 
@@ -1049,9 +1049,9 @@ _I-Rep_
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| id | T\_HASH | Transaction hash of network proposal to cancel |
+| Key | Value Type | Description                                    |
+| --- | ---------- | ---------------------------------------------- |
+| id  | T_HASH     | Transaction hash of network proposal to cancel |
 
 #### Examples
 
@@ -1087,10 +1087,10 @@ _I-Rep_
 
 #### Parameters
 
-| Key | Value Type | Description |
-| :--- | :--- | :--- |
-| id | T\_HASH | Transaction hash of network proposal to vote |
-| vote | T\_INT | 0x0: Disagree, 0x1: Agree |
+| Key  | Value Type | Description                                  |
+| ---- | ---------- | -------------------------------------------- |
+| id   | T_HASH     | Transaction hash of network proposal to vote |
+| vote | T_INT      | 0x0: Disagree, 0x1: Agree                    |
 
 #### Examples
 
@@ -1232,4 +1232,3 @@ Triggered on any successful voteProposal transaction approving network proposal.
 def NetworkProposalApproved(self, id: bytes):
     pass
 ```
-

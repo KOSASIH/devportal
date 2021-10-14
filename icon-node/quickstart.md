@@ -1,12 +1,12 @@
 # Quickstart
 
-## **Becoming a Public Representative \(P-Rep\)**
+## **Becoming a Public Representative (P-Rep)**
 
 P-Reps are the consensus nodes that produce, verify blocks and participate in network policy decisions on the ICON Network. To register and become a P-Rep will consist of the following three steps,
 
-1. Install P-Rep tools \(CLI for on-chain P-Rep operations\)  
-2. Register as a P-Rep via P-Rep tools  
-3. Build MainNet P-Rep node
+1\. Install P-Rep tools (CLI for on-chain P-Rep operations)\
+2\. Register as a P-Rep via P-Rep tools\
+3\. Build MainNet P-Rep node
 
 ## **1. Install P-Rep Tools**
 
@@ -24,7 +24,7 @@ For manual installation and P-Rep tool commands, see [full documentation](p-rep-
 
 ### **2. Register via P-Rep Tools**
 
-**\(Registration fee is 2,000 ICX\)**
+**(Registration fee is 2,000 ICX)**
 
 There are three ways supply P-Rep registration info to P-Rep Tools; using a json configuration file, using optional arguments, or using interactive command line.
 
@@ -112,20 +112,24 @@ The "details" parameter is an external json file that holds additional informati
 
 ## **3. Build MainNet P-Rep Node**
 
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
 ### **Pre-requisites**
 
-The specifications below are recommended for main P-Reps \(top 22\). Sub P-Reps \(outside of top 22\) can run lower-end specs as they do not produce/validate blocks but only serve as citizen nodes. Current blockchain size is 1.1T as of this update \(2021, September 13th\).
+The specifications below are recommended for main P-Reps (top 22). Sub P-Reps (outside of top 22) can run lower-end specs as they do not produce/validate blocks but only serve as citizen nodes. Current blockchain size is 1.1T as of this update (2021, September 13th).
 
 #### **Hardware considering the node is running on AWS**
 
-* c5.4xlarge \(2TB SSD, gp3, 3000 IOPS, 125MBps\)
+* c5.4xlarge (2TB SSD, gp3, 3000 IOPS, 125MBps)
   * [https://aws.amazon.com/ec2/instance-types/c5/](https://aws.amazon.com/ec2/instance-types/c5/)
 
 #### **Software**
 
 **OS Requirement**
 
-* Linux \(CentOS 7 or Ubuntu 16.04+\)
+* Linux (CentOS 7 or Ubuntu 16.04+)
 
 **Open Ports**
 
@@ -136,7 +140,7 @@ The specifications below are recommended for main P-Reps \(top 22\). Sub P-Reps 
 
 **Docker 18.x+**
 
-```text
+```
 ## Update the apt package index:
 $ sudo apt-get update
 
@@ -170,7 +174,7 @@ $ docker version
 
 ### **3.2 Install Docker Compose**
 
-```text
+```
 ## Install python-pip
 $ sudo apt-get install -y python-pip
 
@@ -215,11 +219,11 @@ services:
 
 **Run docker-compose**
 
-```text
+```
 $ docker-compose up -d
 ```
 
-The parameter provided **FASTEST\_START: "yes"** will download the latest full-hour blockchain snapshot, and the remaining blocks will be synchronized automatically. You can check server status and current block height via this API: [http://{YOUR\_NODE\_IP}:9000/api/v1/status/peer](http://{YOUR_NODE_IP}:9000/api/v1/status/peer).
+The parameter provided **FASTEST_START: "yes"** will download the latest full-hour blockchain snapshot, and the remaining blocks will be synchronized automatically. You can check server status and current block height via this API: [http://{YOUR_NODE_IP}:9000/api/v1/status/peer](http://{your_node_ip}:9000/api/v1/status/peer).
 
 ### **Citizen Node**
 
@@ -227,9 +231,8 @@ Citizen nodes are non-producing nodes on the ICON network. A non-producing node 
 
 ICON node software is identical for P-Rep nodes and Citizen nodes, one can follow the same procedures to set up a P-Rep node, without registration, to operate a Citizen node.
 
-### \*\*\*\*[**Experiment on TestNet**](../introduction/the-icon-network/testnet.md#testnet)\*\*\*\*
+### ****[**Experiment on TestNet**](../introduction/the-icon-network/testnet.md#testnet)****
 
 ## **Having Trouble?**
 
 For troubleshoots and other questions, please join ICON P-Rep MainNet or ICON P-Rep TestNet Telegram Channels. You can ask for an invite in the [main telegram channel](https://t.me/hello_iconworld).
-

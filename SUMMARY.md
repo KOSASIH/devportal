@@ -10,7 +10,7 @@
   * [Transactions](introduction/icon-key-concepts/transactions.md)
   * [Transactions Fees](introduction/icon-key-concepts/transactions-fees.md)
   * [ICON Nodes](introduction/icon-key-concepts/icon-nodes.md)
-  * [Governance - Public Representative \(P-Rep\)](introduction/icon-key-concepts/governance-public-representative-p-rep.md)
+  * [Governance - Public Representative (P-Rep)](introduction/icon-key-concepts/governance-public-representative-p-rep.md)
   * [Governance - IISS](introduction/icon-key-concepts/governance-iiss.md)
 * [The ICON Network](introduction/the-icon-network/README.md)
   * [Testnet](introduction/the-icon-network/testnet.md)
@@ -40,7 +40,7 @@
   * [Multisig Wallet](python-score/sample-scores/multisig-wallet.md)
   * [DEX](python-score/sample-scores/dex.md)
 
-## T-Bears for Python SCORE <a id="tbears"></a>
+## T-Bears for Python SCORE <a href="tbears" id="tbears"></a>
 
 * [Overview](tbears/overview.md)
 * [Installation](tbears/installation.md)
@@ -98,13 +98,14 @@
   * [JSON Standard for P-Rep Detailed Information](references/reference-manuals/json-standard-for-p-rep-detailed-information.md)
   * [ICON Governance SCORE APIs](references/reference-manuals/icon-governance-score-apis.md)
 
----
+***
 
 * [Support](support.md)
 * [Developer Forum](https://forum.icon.community/c/d/33)
 
 ## Release notes
 
+* [2021-10-12](release-notes/2021-10-12.md)
 * [2021-03-20](release-notes/2021-03-20.md)
 * [2021-03-04](release-notes/2021-03-04.md)
 * [2021-02-17](release-notes/2021-02-17.md)
@@ -115,4 +116,3 @@
 * [2020-04-08](release-notes/2020-04-08.md)
 * [2020-01-28](release-notes/2020-01-28.md)
 * [2019-12-19](release-notes/2019-12-19.md)
-

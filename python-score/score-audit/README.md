@@ -6,7 +6,7 @@ description: >-
 
 # SCORE Audit
 
-**NOTICE: New PYTHON SCOREs will not be allowed anymore in ICON 2.0. If you are starting a new project, please use Java. If you are already working on python SCOREs for a while and do not have the resources to switch to Java before ICON 2.0, please let use know in** [**this thread**](https://forum.icon.community/t/python-score-migration-to-java/2227) **before ICON 2.0 mainnet launch.**
+**NOTICE: New PYTHON SCOREs will not be allowed anymore in ICON 2.0. If you are starting a new project, please use Java. If you are already working on python SCOREs for a while and do not have the resources to switch to Java before ICON 2.0, please let use know in **[**this thread**](https://forum.icon.community/t/python-score-migration-to-java/2227)** before ICON 2.0 mainnet launch.**
 
 For every SCOREs requested to deploy to the ICON mainnet, we perform a security audit in an effort to verify they do not break the mainnet. The audit process may take several days. Before you plan to build your DApp, please take the time to look at these guidelines.
 
@@ -14,7 +14,7 @@ Note, ICON Foundation audits do not audit for security or business logic of a co
 
 ### Guidelines
 
-**Please provide integration tests result on Sejong \(function calls with parameters and Sejong transaction hashes\).**
+**Please provide integration tests result on Sejong (function calls with parameters and Sejong transaction hashes).**
 
 Code should be deterministic as it will run on multiple nodes. You should avoid any business logic that depends on non-deterministic input such as clock time, random number, or external data source.
 
@@ -31,7 +31,7 @@ To pass an ICON audit, we recommend you do the following.
 
 * You request to “deploy” your SCORE to the ICON mainnet from the T-Bears CLI.
 * Your SCORE becomes in “pending” state, if the deploy transaction succeeded.
-* You can query your SCORE’s state by sending an API call to a special address using SDKs \(Java, Python\) or on the ICONex.
+* You can query your SCORE’s state by sending an API call to a special address using SDKs (Java, Python) or on the ICONex.
   * Address : cx0000000000000000000000000000000000000001
   * API : getScoreStatus
   * Parameter : SCORE address. You can get this address by querying the result of deploy transaction using "tbears txresult" command.
@@ -41,4 +41,3 @@ To pass an ICON audit, we recommend you do the following.
 ### Notes
 
 We confirm that we do not have any intention of controlling DApps. Our first priority is maintaining ICON network as stable as possible, and minimizing any negative impacts, if any, on our partners business running on ICON.
-
